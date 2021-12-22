@@ -3,8 +3,8 @@ title: 使用stub配合laravel-excel实现后台运行的excel下载中心
 date: 2021-12-08 11:27:44
 tags: [2021,laravel,stub]
 categories: [代码]
-top_img: /img/www.jpeg
-cover: /img/www.jpeg
+top_img: /img/stub.jpeg
+cover: /img/stub.jpeg
 ---
 
 
