@@ -1,6 +1,6 @@
 ---
 title: Ubuntu系统下安装LNMP
-date: 2021-12-08 11:27:44
+date: 2021-12-04 11:27:44
 tags: [2021,laravel,stub]
 categories: [代码]
 top_img: /img/ubuntu.jpg
