@@ -1,0 +1,53 @@
+name: Hexo Deploy
+
+# 只监听 master 分支的改动
+on:
+  push:
+    branches:
+      - hexo
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 获取博客源码和主题
+      - name: Checkout
+        uses: actions/checkout@v2
+
+        # 主题文件夹，如果你的主题不是 git submodule 可以不配置
+      - name: Checkout theme repo
+        uses: actions/checkout@v2
+        with:
+          repository: jerryc127/hexo-theme-butterfly
+          ref: master
+          path: themes/butterfly
+
+      # 这里用的是 Node.js 12.x
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      # 安装依赖
+      - name: Install dependencies
+        run: |
+          npm install -g hexo-cli
+          npm install
+          npm install hexo-deployer-git --save
+          npm install hexo-asset-image --save
+          npm install hexo-generator-search --save
+      # 从之前设置的 secret 获取部署私钥
+      - name: Set up environment
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+      # 生成并部署
+      - name: Deploy
+        run: |
+          hexo clean && hexo g && hexo d
