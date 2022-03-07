@@ -34,6 +34,10 @@ sudo nginx=stable
 sudo add-apt-repository ppa:nginx/$nginx
 sudo apt update
 sudo apt install nginx
+#启动nginx
+sudo systemctl start nginx
+#nginx开机自启动
+sudo systemctl enable nginx
 ```
 
 # mysql
