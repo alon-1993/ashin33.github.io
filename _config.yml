@@ -103,7 +103,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo:
-#    github: https://github.com/ashin33/ashin33.github.io.git
-    coding: https://e.coding.net/ashin33/ashin33.coding.me/ashin33.github.io.git
+  repo: git@github.com:ashin33/ashin33.github.io.git
   branch: master
+  name: ashin33
+  email: ashin_33@163.com
