@@ -1,3 +1,3 @@
 <div class="gallery-group-main">
-{% galleryGroup '花花世界' 'hello world' '/gallery/world' /gallery/world/202201.jpg %}
+{% galleryGroup '神的孩子都在跳舞' 'dancing....' '/gallery/world' /gallery/world/south_country.jpg %}
 </div>
