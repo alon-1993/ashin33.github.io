@@ -1,3 +1,6 @@
 {% gallery %}
-![](/gallery/world/202201.jpg)
+![](/gallery/world/south_country.jpg)
+![](/gallery/world/cloud.jpg)
+![](/gallery/world/ming_zhu.jpg)
+![](/gallery/world/barbecue.jpg)
 {% endgallery %}
